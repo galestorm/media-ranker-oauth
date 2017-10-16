@@ -35,7 +35,6 @@ class SessionsController < ApplicationController
   def create
     @auth_hash = request.env['omniauth.auth']
 
-
     @login_user = User.find_by(uid: @auth_hash['uid'], provider: @auth_hash['provider'])
 
     if @login_user
